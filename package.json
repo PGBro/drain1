@@ -1,0 +1,48 @@
+{
+  "name": "usdt-staking-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host 0.0.0.0 --port 5173",
+    "dev:all": "concurrently -k \"npm run server:dev\" \"npm run dev\"",
+    "dev:all:host": "concurrently -k \"npm run server:dev\" \"npm run dev:host\"",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "preview:host": "vite preview --host 0.0.0.0 --port 4173",
+    "mobile": "powershell -ExecutionPolicy Bypass -File ./scripts/start-mobile-test.ps1",
+    "server:install": "npm install --prefix server",
+    "server:dev": "npm run dev --prefix server",
+    "server:build": "npm run build --prefix server",
+    "server:start": "npm run start --prefix server",
+    "render:build": "npm install --prefix server && npm run build",
+    "render:start": "npm run start --prefix server"
+  },
+  "dependencies": {
+    "@fastify/static": "^8.3.0",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/helmet": "^13.0.2",
+    "@rainbow-me/rainbowkit": "^2.2.4",
+    "@tanstack/react-query": "^5.66.0",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.8.5",
+    "framer-motion": "^12.38.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-qr-code": "^2.0.18",
+    "tronweb": "^6.3.0",
+    "viem": "^2.23.0",
+    "wagmi": "^2.14.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.0"
+  }
+}

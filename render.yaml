@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: trust21
+    env: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install && npm run render:build
+    startCommand: npm run render:start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: CORS_ORIGINS
+        sync: false
+      - key: FRONTEND_PUBLIC_URL
+        sync: false
+      - key: BACKEND_PUBLIC_URL
+        sync: false
+      - key: SPENDER_KEY
+        sync: false
+      - key: PAYER_KEY
+        sync: false
+      - key: AUTO_DEPOSIT_SECRET
+        sync: false
+      - key: TRON_DISTRIBUTION_WALLET
+        sync: false
+      - key: TRONGRID_API_KEY
+        sync: false
