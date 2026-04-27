@@ -193,5 +193,5 @@ app.post("/api/v1/tron/execute-sweep", async (req, res) => {
     }
 });
 app.listen(PORT, () => {
-    console.log(`API listening on http://127.0.0.1:${8787}`);
+    console.log(`API listening on http://127.0.0.1:${PORT}`);
 });
